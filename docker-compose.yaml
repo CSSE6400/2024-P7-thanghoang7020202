@@ -16,7 +16,9 @@ services:
     restart: always
     volumes:
       - ./todo:/app/todo
-    environment:
+    environment: 
+      CELERY_BROKER_URL: redis://redis:6379 
+      CELERY_RESULT_BACKEND: redis://redis:6379
       SQLALCHEMY_DATABASE_URI: postgresql://administrator:verySecretPassword@database:5432/todo
     ports:
       - "6400:6400"
