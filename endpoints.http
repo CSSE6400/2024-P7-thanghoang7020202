@@ -1,0 +1,41 @@
+@baseUrl = https://legendary-space-robot-49jvvx6qwjg3wg6-6400.app.github.dev/
+#@baseUrl = http://localhost:8080
+
+### Health
+GET {{baseUrl}}/api/v1/health
+
+### Get all emails from the server
+GET {{baseUrl}}/api/v1/customers/11115653-b49e-4ed6-b703-72fdc5df11d0/emails
+
+### Get all email but apply filter
+GET {{baseUrl}}/api/v1/customers/11115653-b49e-4ed6-b703-72fdc5df11d0/emails?limit=20&offset=0&start=2024-02-21T13:10:05Z&end=2024-05-21T14:10:05Z&to=no-reply@uq.edu.au&from=support@uq.edu.au&state=scanned&only_malicious=true
+
+### Get all email applying datetime filter
+GET {{baseUrl}}/api/v1/customers/11115653-b49e-4ed6-b703-72fdc5df11d0/emails?start=2024-02-20T09:47:30Z&end=2024-04-20T09:47:39Z
+
+### Get all email applying boolean filter
+GET {{baseUrl}}/api/v1/customers/11115653-b49e-4ed6-b703-72fdc5df11d0/emails?only_malicious=false
+
+### Get all email applying filter limit
+#GET {{baseUrl}}/api/v1/customers/11115653-b49e-4ed6-b703-72fdc5df11d0/emails?limit=5&offset=2
+
+### Get all reports of all recipients from the server
+GET {{baseUrl}}/api/v1/customers/11115653-b49e-4ed6-b703-72fdc5df11d0/reports/recipients
+
+### Get all reports of all domains from the server
+GET {{baseUrl}}/api/v1/customers/11115653-b49e-4ed6-b703-72fdc5df11d0/reports/domains
+
+### Get all reports of all actors from the server
+GET {{baseUrl}}/api/v1/customers/11115653-b49e-4ed6-b703-72fdc5df11d0/reports/actors
+
+
+### Prac7 example post request
+POST {{baseUrl}}/api/v1/todos/ical
+
+{ 
+ "task_id": "2e80aefd-4a69-4a94-b23a-45f2b8110988", 
+ "task_url": "http://localhost:6400/api/v1/todos/ical/2e80aefd-4a69-4a94-b23a-45f2b8110988/status" 
+}
+
+### Delete
+DELETE {{baseUrl}}/customers/e6185653-b49e-4ed6-b703-72fdc5df11d0/emails
